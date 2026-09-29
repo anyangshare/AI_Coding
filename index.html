@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 디지털혁신 백서 검색·열람기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 상단 헤더 -->
+    <header class="header">
+      <div class="header-content">
+        <span class="badge-dept">행정안전부 디지털혁신과</span>
+        <h1 class="title">2026 디지털혁신 백서 열람 시스템</h1>
+        <p class="subtitle">백서 본문의 주요 정책, 예산, 일정 및 성과를 신속하게 검색하고 확인하세요.</p>
+        
+        <!-- AI 도구 + 메모 1줄 표시 영역 -->
+        <div class="ai-memo-bar">
+          <span class="ai-tag">AI 도구: Gemini</span>
+          <span class="memo-text">메모: 백서 초고 본문 데이터(데이터.js)를 실시간으로 색인·검색할 수 있도록 구성한 정적 웹페이지입니다.</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 검색 및 필터 컨트롤 바 -->
+    <section class="search-section">
+      <div class="search-box-wrapper">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="장 제목, 사업명, 예산, 담당부서, 국장 성명 등 키워드를 입력하세요..." autocomplete="off">
+        <button id="clearBtn" class="clear-btn" title="검색어 지우기">&times;</button>
+      </div>
+      
+      <!-- 현재 표시 결과 수 표시 영역 -->
+      <div class="result-info">
+        <span id="resultCount" class="result-count">검색 결과: <strong>6</strong>건 (전체 6개 장)</span>
+      </div>
+    </section>
+
+    <!-- 카드 리스트 영역 -->
+    <main>
+      <div id="cardContainer" class="card-grid"></div>
+      <div id="noResult" class="no-result" style="display: none;">
+        <p class="no-result-title">일치하는 검색 결과가 없습니다.</p>
+        <p class="no-result-desc">다른 검색어로 다시 검색해 보세요.</p>
+      </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+      <p>&copy; 2026 행정안전부 디지털혁신 백서 편찬위원회</p>
+    </footer>
+  </div>
+
+  <!-- 데이터 및 스크립트 로드 -->
+  <script src="데이터.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
